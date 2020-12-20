@@ -37,12 +37,27 @@ namespace Lesson02
             else
                 return tmp * tmp * a;
         }
+        static int kalk(int a, int b, int c)
+        {
+            if (a > b)
+                return 0;
+            if (a == b) 
+            {
+                if (c == 7)
+                    return 1;
+                else
+                    return 0;
+            }
+            c++;
+            return kalk(a + 1, b, c) + kalk(a * 2, b, c);
+        }
         static void Main(string[] args)
         {
             dec_to_bin(10);
             Console.WriteLine("\n" + pow(2, 10));
             powst(2, 10);
             Console.WriteLine(pow2(2, 10));
+            Console.WriteLine(kalk(3, 20, 0));
             Console.ReadKey();
         }
     }
